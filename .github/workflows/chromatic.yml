@@ -14,8 +14,7 @@ jobs:
     - run: |
         yarn build-storybook
     - uses: chromaui/action@v1
-      with: 
+      with:
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         token: ${{ secrets.GITHUB_TOKEN }}
         storybookBuildDir: storybook-static
-        
