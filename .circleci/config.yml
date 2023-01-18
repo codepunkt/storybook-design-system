@@ -46,7 +46,12 @@ jobs:
 
 workflows:
   version: 2
-  lint-build:
+  build-lint-deploy:
     jobs:
       - build
-      - lint
+      - lint:
+          requires:
+            - build
+      - chromatic-deployment:
+          requires:
+            - lint
